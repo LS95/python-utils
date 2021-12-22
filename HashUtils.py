@@ -1,8 +1,12 @@
+'''
+哈希算法、编码等
+'''
 import hashlib
 import uuid
 from hashlib import md5
 import hmac
 import base64
+
 
 ################################################
 def get_md5(*args):
@@ -43,10 +47,11 @@ def get_base64encode(arg):
     ---------
     @result: 字符串
     """
-    if not isinstance(arg,bytes):
-        arg = bytes(arg,encoding="utf-8")
-    result =  str(base64.b64encode(arg),encoding="utf-8")
+    if not isinstance(arg, bytes):
+        arg = bytes(arg, encoding="utf-8")
+    result = str(base64.b64encode(arg), encoding="utf-8")
     return result
+
 
 def get_base64decode(arg):
     """
@@ -55,7 +60,7 @@ def get_base64decode(arg):
     ---------
     @result: 字符串
     """
-    result =  base64.b64decode(arg)
+    result = base64.b64decode(arg)
     return result
 
 
@@ -69,8 +74,6 @@ def get_hmac_sha256(secret, message):
     ---------
     @result: 签名输出类型是："base64"
     """
-
-
 
     message = bytes(message, "utf-8")
     secret = bytes(secret, "utf-8")
@@ -108,7 +111,7 @@ def test():
     print(get_md5("admin"))
     a = b'admin'
     print(type(a))
-    a =  get_base64encode(a)
+    a = get_base64encode(a)
     print(a)
     res = get_base64decode(a)
     print(res)
@@ -118,7 +121,8 @@ def test():
     res = get_base64decode(aa)
     print(res)
     print(get_uuid())
-    print(get_hmac_sha256("admin","password"))
+    print(get_hmac_sha256("admin", "password"))
+
 
 if __name__ == '__main__':
     test()
