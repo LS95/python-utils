@@ -23,7 +23,7 @@ def get_cmd_out(cmd):
 
 
 def test():
-    cmdLists = ["ls -al", "whoami", "ifconfig","notAcommand"]
+    cmdLists = ["ls -al", "whoami", "ifconfig", "notAcommand"]
     for eachCmd in cmdLists:
         print(eachCmd, " >>>>  ", get_cmd_out(eachCmd))
 
